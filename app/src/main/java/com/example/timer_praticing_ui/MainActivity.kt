@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -28,6 +29,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
@@ -46,7 +48,7 @@ class MainActivity : ComponentActivity() {
                 contentAlignment = Alignment.Center
             ){
                 Timer(
-                    seconds = 100L * 1000L,
+                    seconds = 120L * 1000L,
                     activeColor= Color.Magenta ,
                     bgColor = Color.Gray,
                     modifier = Modifier.size(200.dp)
@@ -126,6 +128,8 @@ fun Timer(
                     text = "seconds",
                     fontSize = 10.sp,
                     color = Color.White,
+                    textAlign = TextAlign.Center,
+
                 )
                 Text(
                     text = (currentTime.value / 1000L).toString(),
